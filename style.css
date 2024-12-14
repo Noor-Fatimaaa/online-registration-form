@@ -1,0 +1,136 @@
+/* General styling for the body and container */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #121212;
+    color: #ffffff;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    overflow: hidden;
+}
+
+.form-container {
+    background: #1e1e1e;
+    padding: 40px;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
+    width: 500px;
+    max-height: 95vh; /* Prevent overflow */
+    overflow-y: auto; /* Allow scrolling within the form */
+    margin-top: 10px; /* Add spacing to avoid cutoff */
+}
+
+/* Styling for the form elements */
+h2 {
+    margin-bottom: 20px;
+    text-align: center;
+    color: #f2f2f2;
+}
+
+input, select, textarea, button {
+    width: 100%;
+    padding: 10px;
+    margin: 5px 0 10px 0;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+    font-size: 14px;
+    background-color: #333333;
+    color: white;
+}
+
+input[type="date"] {
+    padding: 7px;
+}
+
+button {
+    background-color: #f9c51c;
+    color: black;
+    font-weight: bold;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #d4a017;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+/* Updated styling for radio buttons */
+.radio-group {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.radio-group input[type="radio"] {
+    display: none; /* Hide the default radio button */
+}
+
+.radio-group label {
+    position: relative;
+    padding-left: 35px; /* Space for the custom radio button */
+    cursor: pointer;
+    font-size: 16px; /* Slightly larger text for readability */
+    color: #f2f2f2; /* Match text color with the form's theme */
+}
+
+.radio-group label::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 20px;
+    height: 20px;
+    border: 2px solid #f9c51c;
+    border-radius: 50%;
+    background: #333333;
+    transition: background 0.3s ease, border-color 0.3s ease;
+}
+
+.radio-group input[type="radio"]:checked + label::before {
+    background: #f9c51c;
+    border-color: #f9c51c;
+}
+
+.radio-group label::after {
+    content: '';
+    position: absolute;
+    left: 6px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background: #121212;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.radio-group input[type="radio"]:checked + label::after {
+    opacity: 1;
+}
+
+/* Specific styling for the name input fields */
+.name-input {
+    display: flex;
+    gap: 10px;
+}
+
+.name-input input {
+    width: 48%;
+}
